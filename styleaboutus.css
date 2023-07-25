@@ -31,6 +31,7 @@ header{
 .navigation { 
     display: flex;
     background-color: #2C2A2A;
+    height: 80px;
     margin: 0;
     padding: 5px;   
     position: relative;
@@ -237,7 +238,7 @@ img{
 /* article總設定 */
 article {
     padding: 100px 0px 0px 0px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* footer*/

@@ -31,6 +31,7 @@ header{
 .navigation { 
     display: flex;
     background-color: #2C2A2A;
+    height: 80px;
     margin: 0;
     padding: 1px;   
     position: relative;
