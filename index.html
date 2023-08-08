@@ -9,18 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="IMG/labelicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="IMG/labelicon.ico" type="image/x-icon"/>
 
 </head>
 <body>
-    <!-- <header>
-        <h1><a href="PONG01.html"><img src="IMG/PONGLOGO.svg"></a></h1>
-    </header> -->
-<header>
+<input type="checkbox" name="" id="menu-switch">
+<header class="main-header">
     <div class="navigation">
         <div class="logo"><a href="index.html"><img src="IMG/PONGLOGO.svg"></a></div>
-        <nav> <!-- 導覽列設定開始-->
+        <nav class="main-nav"> <!-- 導覽列設定開始-->
             <ul>
                 <li><a href="ABOUTUS.html">ABOUT US</a></li>
                 <li><a href="NEWS.html">NEWS</a></li>
@@ -28,15 +27,23 @@
                 <li><a href="CONTACTUS.html">CONTACT US</a></li>
                 <li><a href="FAQS.html">FAQs</a></li>
             </ul>
-        </nav>  
+          </nav>  
         <div class="icon">
                 <div class="login"><a href="login.html"><img src="IMG/login_icon.svg"></a></div>
                 <div class="bag"><a href="bag.html"><img src="IMG/bag_icon.svg"></a></div>
                 <div class="search"><a href="search.html"><img src="IMG/search_icon.svg"></a></div>
         </div>
     </div>  
+
+    <div class="hb">
+      <label for="menu-switch">
+          <span></span>
+          <span></span>
+          <span></span>
+      </label>
+    </div>
 </header>
-                       <!-- 導覽列設定結束-->
+<!-- header 導覽列設定結束-->
 
 <main> 
     <!--第一大塊主視覺圖片-->
@@ -100,21 +107,21 @@
                 <div class="f"><a href="PRODUCTS.html"><img src="IMG/bsr_pinkyserenade.png" alt=""></a>
                      <div class="pps"><img src="IMG/mockup_bottle.svg" alt=""></div>
                 </div>
-                <div class="ps"><a href="PRODUCTS.html">PINKY SERENADE</a></div>
+                <div class="ps">PINKY SERENADE</div>
                 <p>"PINKY SERENADE" whispers of sweet florals, embracing with tender affection.</p> 
             </div>
             <div class="bf">
                 <div class="f"><a href="PRODUCTS.html"><img src="IMG/bsr_dolorousrose.png" alt=""></a>
                      <div class="pps"><img src="IMG/mockup_bottle.svg" alt=""></div>
                 </div>
-                <div class="ps"><a href="PRODUCTS.html">DOLOROUS ROSE</a></div>
+                <div class="ps">DOLOROUS ROSE</div>
                 <p>Ethereal rose with a hint of bittersweet melancholy. Enchanting nostalgia.</p> 
             </div>
             <div class="bf">
                 <div class="f"><a href="PRODUCTS.html"><img src="IMG/bsr_daisydreams.png" alt=""></a>
                      <div class="pps"><img src="IMG/mockup_bottle.svg" alt=""></div>
                 </div>
-                <div class="ps"><a href="PRODUCTS.html">DAISY DREAMS</a></div>
+                <div class="ps">DAISY DREAMS</div>
                 <p>"DAISY DREAMS" pops up with fresh blooms, evoking whimsical, joyful reveries.</p> 
             </div>
         </div>
@@ -154,31 +161,8 @@
                    <!-- 偽元素 -->
                 <h2 class="h2bc"></h2>
 
-                <div class="f2">
-        
-              <h3> ■ WHICH COLOR APPEAL YOU THE MOST?</h3>
+                
             
-            <form>
-              <button class="askbtn" onclick = "A()">RUBY RED</button>
-              <button class="askbtn" onclick = "B()">SAPPHIRE BLUE</button>
-              <button class="askbtn" onclick = "C()">EMERALD GREEN</button>
-              <button class="askbtn" onclick = "D()">GOLDEN YELLOW</button><br>
-            </form>
-            <script>
-            function A(){
-                alert("Energetic and passionate!                                                          Recommondation:FRUITY collection >>>> SWEET ATMOSPHERE");
-              }
-              function B(){
-                alert("Creative and introspective!                                                          Recommondation:FLORAL collection >>>> ROSY CHICK");
-              }
-              function C(){
-                alert("Balanced and nurturing!                                                          Recommondation:WOODY collection >>>> TRANQUILITY ");
-              }
-              function D(){
-                alert("Optimistic and cheerful!                                                          Recommondation:OCEAN collection >>>> EMBRACEMENT");
-              }
-            </script>
-        </div>              
 </article>     
 <!-- 第四個article:brilliant collabs-->          
  <!-- <article id="artbcollabs">

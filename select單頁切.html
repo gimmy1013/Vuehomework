@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "row mt-3">
+        <div class = "col-sm-2 offset-sm-4">
+          <select class = "form-control" id = "mySelect"> 
+            <option value = "">---</option>
+            <option value = "A">LATEST LAUNCH</option>
+            <option value = "B">SALE</option>
+            <option value = "C">NEW MATERIAL</option>
+            <option value = "D">COLLABORATION</option>
+          </select>
+        </div>
+        <div class = "col-sm-2">
+          <select class = "form-control" id = "resultA">
+            <option value = "">---</option>
+            <option value = "1"></option>
+            <option value = "2"></option>
+            <option value = "3"></option>
+          </select>
+          <!-- <input type = "text" class = "form-control" id = "resultB"> -->
+        </div>
+      </div>
+
+
+      <script>
+const mySelect = document.getElementById('mySelect');
+const resultA = document.getElementById('resultA');
+const resultB = document.getElementById('resultB');
+mySelect.addEventListener('change', (e) => {
+  switch (e.target.value) {
+    case 'A': {
+      resultA.style.display = 'block';
+      resultB.style.display = 'none';
+      break;
+    }
+    case 'B': {
+      resultA.style.display = 'none';
+      resultB.style.display = 'block';
+      break;
+    }
+    default: {
+      resultA.style.display = 'none';
+      resultB.style.display = 'none';
+      break;
+    }  
+  }
+});
+      </script>
+</body>
+</html>

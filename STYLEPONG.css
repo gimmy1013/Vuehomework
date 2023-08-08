@@ -5,7 +5,7 @@
 
 /* RESET */
 *{
-    font-family:'EB Garamond',serif ;
+    font-family:'Cardo','EB Garamond',serif ;
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -16,11 +16,12 @@ a{
 	color: #9a948d;
 	text-decoration: none;
 }
-
 a:hover{
 	color:#e5ec9e;
 	text-decoration: none;
 }
+
+/* 做rwd的 */
 
 /* header 導覽列 */
 header{
@@ -42,13 +43,11 @@ header{
 .navigation .logo img{
     width: 75px;
     height: 75px;
-    /* border: 1px solid red; */
 }
 .navigation ul li {
     list-style-type: none;
     display: inline-block;
     margin: 16px 16px;
-    /* border: 1px solid red; */
 }
 .navigation .icon {
     width: 150px;
@@ -69,7 +68,7 @@ header{
     border-right:1.25px solid white;
     padding-right: 25px;  
 }
-
+/* 做底線滑動以及改色特效 */
 .navigation ul li a {
     color: #ffffff;
     text-decoration: none;
@@ -93,6 +92,13 @@ header{
     width: 100%;
     left: 0;
 }
+/* /給rwd用的漢堡，此時先隱藏/ */
+.hb{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    display: none;
+}
 
 
 /* 主要大圖視覺 */
@@ -101,12 +107,13 @@ header{
     position: relative;
 }
 .mainvisual img {
+    background-image: url(IMG/home-mainvisual.png);
     display: block;
-    margin: 0 auto;
-    max-width: 100%;
+    margin:  auto;
+    width: 100%;
     height: auto;
     padding-top: 81px;
-    height: 86vh;
+    height: 86vh
 }
 .mainvisual .wop{
     position: absolute;
@@ -117,11 +124,24 @@ header{
     color: #fff;
     /* border: 1px solid red;  */
 }
+.mainvisual::before{
+    opacity: 0.6;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 200px 250px 0 0;
+    border-color: #f8eceb transparent transparent transparent;
+    opacity: 0.6;
+    position: absolute;
+    content: '';
+    top:100% ;
+    left:0;
+}
 .mbgi{
     position: absolute;
-    width: 21%;
-    top: 168px;
-    left: 405px;
+    width: 18%;
+    top: 27%;
+    left: 33.5%;
     z-index: 99999;
     /* border: red 1px solid; */
 }
@@ -130,8 +150,8 @@ header{
 }
 .mbtn  {
     position: absolute;
-    top: 520px;
-    left: 405px; 
+    top: 83%;
+    left: 32%; 
     font-size: 14px; 
     text-align: center; 
     width: 100px;
@@ -141,8 +161,8 @@ header{
 }
 .mbtn:hover {
     position: absolute;
-    top: 520px;
-    left: 405px; 
+    top: 83%;
+    left: 32%; 
     font-size: 14px; 
     text-align: center; 
     width: 100px;
@@ -153,6 +173,7 @@ header{
     color: rgb(56, 21, 21);
 }
 .mbtn div > a{
+    display: block;
     width: 100%;
     height: 100%;
     color: white;
@@ -243,15 +264,13 @@ h2{
     content: '';
     right: 250px;
 }
-
-
 h3 {
     padding-left: 20%;/* 標題三左側設定間距 */
 }
 
 /* 設定內容寬度上限 */
 .hnews {
-    max-width: 60%;
+    max-width: 65%;
     margin: auto;  /* 左右置中 */
     display: flex;
     justify-content: space-between;
@@ -268,13 +287,13 @@ h3 {
 }
 .hnewsm{
     position: relative;
-    top: 100px;
+    top: 30px;
     }
 .hnewsl img,
 .hnewsm img,
 .hnewsr img{
     width:100%;
-    border-radius:10% 10% 0 0;
+    border-radius:1% 1% 0 0;
 }
 .blanknews{
     padding: 10px;
@@ -350,6 +369,7 @@ h3 {
 }
 
 .vmbtn >  a{
+    display: block;
     color: #140d05;
 	text-decoration: none;
     width: 100%;
@@ -427,7 +447,7 @@ h3 {
     height: 60%;
 }
 .f img{
-    border-radius: 0 10% 0 10%;
+    border-radius: 0 3% 0 3%;
     width: 100%;
     height: 100%;
 
@@ -438,41 +458,22 @@ h3 {
 /* .f img:hover{
     
 } */
-
-.bf .ps {
-    /* position: relative; */
+.ps {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 40px;
-    transform: translateY(45%);
+    height: 36px;
+    margin-top: 8%;
+    /* transform: translateY(45%); */
     font-size: 16px;
-    cursor: pointer;
-    color: #e4e499;
+    /* cursor: pointer; */
+    color:white;
     text-decoration: none;
-    background-color:rgb(41, 12, 12);
-    transition: all .2s linear;
+    background-color:rgb(41, 12, 12); */
+    transition: all .2s linear; */
 }
-.bf .ps:hover{
-	color:#1b1e1e;
-    /* border: 1px solid #4c3838; */
-    /* background-color: transparent; */
-	text-decoration: none;
-}
-.bf .ps >a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height:40px;
-    color: #f7f5f2;
-	text-decoration: none;
-}
-.bf .ps >a:hover{
-    color: #f7e096;
-	text-decoration: none;
-}
+
 .pps{
     position: absolute;
     right: 0px;
@@ -491,7 +492,7 @@ h3 {
 }
 
 /*問答表單*/
-.f1,.f2{
+.f1{
    padding: 3%;
 }
 form{
@@ -638,4 +639,171 @@ footer{
     font-size: 12px;
     margin: 20px;
 }
- 
+
+
+/* rwd */
+
+#menu-switch{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .logo{
+        position: absolute;
+        margin: auto;
+    }
+    .icon{
+        z-index: -10;
+        display: none;
+    }
+    .hb{
+        display: block;
+    }
+    .hb label{
+        width: 40px;
+        height: 40px;
+        background-color:  #2C2A2A;
+        display: block;
+        position: relative;
+    }
+    .main-nav {
+        position: absolute;
+        z-index: 9;
+        width: 100%;
+        height: 100vh;
+        /* height: calc(100vh - 30px); */
+        background-color: rgb(24, 8, 6); 
+        top: 100%;
+        left: 0%;
+        translate: -100% 0%;
+        opacity: 0;
+        transition: opacity 1s, translate 0s 1s; */
+    }
+    .main-nav >ul{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        margin: 20px;
+    }
+    .main-nav li + li{ 
+        border-top: 1px solid #fff;
+    }
+    #menu-switch:checked + .main-header .main-nav{
+        translate: 0% 0%;
+        opacity: 1;
+        transition: opacity 1s;
+    }
+   
+    /* .backdrop{
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 0%;
+        height: 0;
+        opacity: 0;
+        background-color: #0008;
+        transition: opacity 1s, 
+                    width 0s 1s, 
+                    height 0s 1s;
+    }
+    #menu-switch:checked + .main-header .backdrop{
+        right: 0;
+        top: 100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        opacity: 1;
+        transition: opacity 1s;
+    } */
+    /* -------------------------------------- */
+    .hb span{
+        width: 80%;
+        height: 1px;
+        background-color: rgb(250, 234, 234);
+        position: absolute;
+        inset: 0;
+        margin: auto;
+    }
+    .hb span:nth-child(1){
+        translate: 0px -10px;
+        rotate: 0deg;
+        transition: translate 0.3s 0.3s,
+                    rotate 0.3s 0s;
+    }
+    .hb span:nth-child(2){
+        opacity: 1;
+        transition: opacity 0.3s 0.6s;
+    }
+    .hb span:nth-child(3){
+        translate: 0px 10px;
+        rotate: 0deg;
+        transition: translate 0.3s 0.3s,
+                    rotate 0.3s 0s;
+    }
+    #menu-switch:checked + .main-header .hb span:nth-child(1){
+        translate: 0px 0px;
+        rotate: 45deg;
+        transition: translate 0.3s 0.3s,
+                    rotate 0.3s 0.6s;
+    }
+    #menu-switch:checked + .main-header .hb span:nth-child(2){
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    #menu-switch:checked + .main-header .hb span:nth-child(3){
+        translate: 0px 0px;
+        /*rotate: -45deg;*/
+        rotate: 315deg;
+        transition: translate 0.3s 0.3s,
+                    rotate 0.3s 0.6s;
+    }
+    .mainvisual img {
+        height: 25vh;
+    }
+    .mbgi{
+        position: absolute;
+        width: 15%;
+        top: 12%;
+        left: 33.5%;
+        z-index: 99999;
+        /* border: red 1px solid; */
+    }
+    .mbtn  {
+        position: absolute;
+        width: 80px;
+        height: 15px;
+        top: 27%;
+        left: 30%; 
+        font-size: 10px; 
+        text-align: center; 
+        border: 1px  solid white;
+        border-radius: 5px;
+    }
+    .h2news::before {
+        width: 28%;
+        height: 1.5px;
+        background-image: linear-gradient(to left, #390d0d 0%, #713838 50%, transparent 50%); /** toleft横向 to bottom纵向**/
+        background-size: 8px 1px;
+        background-repeat: repeat-x; /** x轴上的渐变 横向的虚线 **/
+        position: absolute;
+        content: '';
+        top: 10%;
+        left: 10%;
+    }
+    .hnewsm{
+        display: none;
+        }
+    .hnewsl,.hnewsr{
+        width: 42%;
+        margin: 5px;
+    }
+    
+    article{
+        
+    }
+
+
+  
+    
+
+}

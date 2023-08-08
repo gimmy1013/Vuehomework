@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, div, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    body {
+      background: #000;
+      text-align: center;
+      font: 12px/20px Arial;
+    }
+
+    #box {
+      position: relative;
+      width: 492px;
+      height: 172px;
+      background: #fff;
+      border-radius: 5px;
+      border: 8px solid #fff;
+      margin: 10px auto;
+    }
+
+    #box .list {
+      position: relative;
+      width: 490px;
+      height: 170px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
+
+    #box .list li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 490px;
+      height: 170px;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      animation: wrap_opacity_0 1s linear forwards;
+    }
+
+    #box .list li.current {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      animation: wrap_opacity_1 1s linear forwards;
+    }
+
+    #box .count {
+      position: absolute;
+      right: 40%;
+      bottom: 5px;
+    }
+
+    #box .count li {
+      color: rgb(158, 155, 153);
+      float: left;
+      width: 10px;
+      height: 10px;
+      cursor: pointer;
+      margin-right: 5px;
+      overflow: hidden;
+      background: rgb(158, 155, 153);
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      border-radius: 20px;
+    }
+
+    #box .count li.current {
+      color: rgb(48, 22, 5);
+      opacity: 1;
+      filter: alpha(opacity=100);
+      font-weight: 700;
+      background: rgb(48, 22, 5);
+    }
+
+    @keyframes wrap_opacity_1 {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes wrap_opacity_0 {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+
+        <div id="box">
+          <ul class="list">
+            <li class="current"><img src="IMG/home-mainvisual.png" width="490"
+                                     height="170"/></li>
+            <li><img src="IMG/aboutus-mainvisual.png" width="490" height="170"/></li>
+            <li><img src="IMG/faqs_mainvisuals.png" width="490" height="170"/></li>
+            <li><img src="IMG/news_mainvisual.png" width="490" height="170"/></li>
+            <li><img src="IMG/products_mainvisual.png" width="490" height="170"/></li>
+          </ul>
+          <ul class="count">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </div>
+      
+      </div>
+
+
+<script>
+  let list = document.querySelector(".list");
+  let count = document.querySelector(".count");
+  let timer = null;
+  let current_num = 1;
+  let last_num = 0;
+
+  function f() {
+    if (current_num >= 5) {
+      current_num = 0;
+    }
+    list.children[last_num].className = "";
+    list.children[current_num].className = "current";
+    count.children[last_num].className = "";
+    count.children[current_num].className = "current";
+    last_num = current_num;
+    current_num += 1;
+  }
+
+  //页面加载，幻灯片即开始工作
+  window.addEventListener("load", function () {
+    timer = setInterval(f, 2000);
+  }, false);
+
+  //幻灯片添加鼠标事件，鼠标悬停，幻灯片停留在当前页
+  list.addEventListener("mouseenter", function () {
+    clearInterval(timer);
+  }, false);
+
+  list.addEventListener("mouseleave", function () {
+    timer = setInterval(f, 2000);
+  }, false);
+
+  //对count添加事件，为子节点代理
+  count.addEventListener("mouseover", function (event) {
+    clearInterval(timer);
+    if (event.target.tagName.toLowerCase() === "li") {
+      //对count初始化
+      for (let i = 0; i < list.children.length; i++) {
+        list.children[i].className = "";
+        count.children[i].className = "";
+      }
+      current_num = Number(event.target.innerHTML) - 1;
+      if (current_num === 0) {
+        last_num = 4;
+      } else {
+        last_num = current_num - 1;
+      }
+      list.children[current_num].className = "current";
+      count.children[current_num].className = "current";
+    }
+  }, false);
+
+  count.addEventListener("mouseout", function () {
+    timer = setInterval(f, 3000);
+  })
+
+</script>
+</body>
+</html>
