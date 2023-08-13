@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PONG</title>
+    <meta name="description" content="PONG。">  <!-- 提供搜尋引擎關於網頁頁面內的重要資訊-->
+    <link rel="stylesheet" href="/css/STYLEPONG.css"> <!-- 連結到STYLEPONG.css-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="/IMG/labelicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/IMG/labelicon.ico" type="image/x-icon"/>
+
+</head>
+<body>
+<input type="checkbox" name="" id="menu-switch">
+<header class="main-header">
+    <div class="navigation">
+        <div class="logo"><a href="index.html"><img src="/IMG/PONGLOGO.svg"></a></div>
+        <nav class="main-nav"> <!-- 導覽列設定開始-->
+            <ul>
+                <li><a href="ABOUTUS.html">ABOUT US</a></li>
+                <li><a href="NEWS.html">NEWS</a></li>
+                <li><a href="PRODUCTS.html">PRODUCTS</a></li>
+                <li><a href="CONTACTUS.html">CONTACT US</a></li>
+                <li><a href="FAQS.html">FAQs</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="bag.html">BAG</a></li>
+            </ul>
+          </nav>  
+        <div class="icon">
+                <div class="login"><a href="login.html"><img src="/IMG/login_icon.svg"></a></div>
+                <div class="bag"><a href="bag.html"><img src="/IMG/bag_icon.svg"></a></div>
+                <div class="search"><a href="search.html"><img src="/IMG/search_icon.svg"></a></div>
+        </div>
+    </div>  
+
+    <div class="hb">
+      <label for="menu-switch">
+          <span></span>
+          <span></span>
+          <span></span>
+      </label>
+    </div>
+</header>
+<!-- header 導覽列設定結束-->
+
+<main> 
+    <!--第一大塊主視覺圖片-->
+    <div class="mainvisual">    
+            <img src="/IMG/home-mainvisual.png">
+    </div>
+    <div class="mbgi">
+            <img src="/IMG/ponghomeword.svg">
+    </div>
+    <div class="mbtn">
+      <div class="mmbtn"><a href="PRODUCTS.html">SHOP NOW</a></div>
+    </div>
+
+    
+<!-- 第一個article，命名為artnews-->
+<article id="artnews">  
+            <h2 class="h2news">NEWS</h2>
+            <div class="hnews" >
+              <div class="hnewsl">  <!-- 類別開始，設定固定寬度900px-->
+                 <div><img src="/IMG/home_news_rose.png" alt=""></div>
+                 <div class="blanknews">
+                    <div class="tag"><a href="NEWS.html">LATEST MATERIAL</a></div>
+                    <div class="tags"><p>2023.07.05</p></div>
+                 <p>ROSY CHICK, the very new product with Damask rose, will be lauched at 07.01.</p>
+                 </div>
+              </div>
+              <div class="hnewsm">  <!-- 類別開始，設定固定寬度900px-->
+                <div><img src="/IMG/home_news_sale.png" alt=""></div>
+                <div class="blanknews">
+                    <div class="tag"><a href="NEWS.html">SALE</a></div>
+                    <div class="tags"><p>2023.07.20</p></div>
+                 <p>Experience the luxury of decent scents with 30% off on all reed diffusers. Shop now!</p>
+                 </div>
+               </div>
+              <div class="hnewsr">  <!-- 類別開始，設定固定寬度900px-->
+                <div><img src="/IMG/home_news_cooperation.png" alt=""></div>
+                <div class="blanknews">
+                    <div class="tag"><a href="NEWS.html">COLLABORATION</a></div>
+                    <div class="tags"><p>2023.07.25</p></div>
+                 <p>Our woody series have been selected by Marory Hotel as the representative scent of the year.</p>
+                 </div>
+                </div>
+            </div>
+          
+</article>
+<div class="vmbtn">
+  <a href="NEWS.html">VIEW MORE</a>
+</div>  
+<article id="artbsr">   
+     <h2 class="h2bsr">BESTSELLER</h2>
+        
+     <div class="btn">
+          <div class="b-wo"><a href="PRODUCTS.html">WOODY</a></div>
+          <div class="b-fl"><a href="PRODUCTS.html">FLORAL</a></div>
+          <div class="b-oc"><a href="PRODUCTS.html">OCEAN</a></div>
+          <div class="b-or"><a href="PRODUCTS.html">ORIENTAL</a></div>
+          <div class="b-fr"><a href="PRODUCTS.html">FRUITY</a></div>
+    </div>
+<!-- 為了rwd而改的 -->
+    <label class="rwdbtn">
+  <select id="selectMode">
+    <option value="1">WOODY</option>
+    <option value="2">FLORAL</option>
+    <option value="3">OCEAN</option>
+    <option value="4">ORIENTAL</option>
+    <option value="5">FRUITY</option>
+  </select>
+   </label>
+     
+     <div class="bsr">
+            <div class="bf">
+                <div class="f"><a href="PRODUCTS.html"><img src="/IMG/bsr_pinkyserenade.png" alt=""></a>
+                     <div class="pps"><img src="/IMG/mockup_bottle.svg" alt=""></div>
+                </div>
+                <div class="ps">PINKY SERENADE</div>
+                <p>"PINKY SERENADE" whispers of sweet florals, embracing with tender affection.</p> 
+            </div>
+            <div class="bf">
+                <div class="f"><a href="PRODUCTS.html"><img src="/IMG/bsr_dolorousrose.png" alt=""></a>
+                     <div class="pps"><img src="/IMG/mockup_bottle.svg" alt=""></div>
+                </div>
+                <div class="ps">DOLOROUS ROSE</div>
+                <p>Ethereal rose with a hint of bittersweet melancholy. Enchanting nostalgia.</p> 
+            </div>
+            <div class="bf">
+                <div class="f"><a href="PRODUCTS.html"><img src="/IMG/bsr_daisydreams.png" alt=""></a>
+                     <div class="pps"><img src="/IMG/mockup_bottle.svg" alt=""></div>
+                </div>
+                <div class="ps">DAISY DREAMS</div>
+                <p>"DAISY DREAMS" pops up with fresh blooms, evoking whimsical, joyful reveries.</p> 
+            </div>
+        </div>
+        <div class="vmbtn">
+          <a href="PRODUCTS.html">VIEW MORE</a>
+        </div>
+</article>
+ <!-- 第三個article:game with pong-->        
+<article id="artgwp">     
+          <h2 class="h2gwp">PONG'S AMAZING STYLES FOR YOU</h2>
+                <div class="f1">
+                      <h3> "Ease with PONG, an artisanal reed diffuser company known for its exquisite scents and elegant designs. Their carefully crafted diffusers infuse spaces with long-lasting, captivating fragrances, creating a harmonious and inviting atmosphere for any environment."" </h3>
+                      <!-- <img src="/IMG/aboutus-mainvisual.png" alt=""> -->
+                    <!-- <form>
+                      <button class="askbtn" onclick = "A()">THRILLING</button>
+                      <button class="askbtn" onclick = "B()">REFRESHING</button>
+                      <button class="askbtn" onclick = "C()">PEACEFUL</button>
+                      <button class="askbtn" onclick = "D()">CHAOS</button><br>
+                    </form>
+
+                    <script>
+                    function A(){
+                        alert("Recommondation:FRUITY collection >>>> SWEET ATMOSPHERE");
+                      }
+                      function B(){
+                        alert("Recommondation:FRUITY collection >>>> SWEET ATMOSPHERE");
+                      }
+                      function C(){
+                        alert("Recommondation:FRUITY collection >>>> SWEET ATMOSPHERE");
+                      }
+                      function D(){
+                        alert("Recommondation:FRUITY collection >>>> SWEET ATMOSPHERE");
+                      }
+                    </script> -->
+<!-- <style>
+.wrap{
+  width: 80%;
+  margin: auto;
+}
+ #box {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background: #fff;
+      border-radius: 5px;
+      /* border: 8px solid #fff; */
+      margin: 10px auto;
+    }
+
+
+    #box .list {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
+
+    #box .list li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60vh;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      animation: wrap_opacity_0 1s linear forwards;
+    }
+
+    #box .list li.current {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      animation: wrap_opacity_1 1s linear forwards;
+    }
+
+    #box .count {
+      position: absolute;
+      /* right: 40%; */
+      bottom: 5px;
+    }
+
+    #box .count li {
+      color: rgb(158, 155, 153);
+      float: left;
+      width: 10px;
+      height: 10px;
+      cursor: pointer;
+      margin-right: 5px;
+      overflow: hidden;
+      background: rgb(158, 155, 153);
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      border-radius: 20px;
+    }
+
+    #box .count li.current {
+      color: rgb(48, 22, 5);
+      opacity: 1;
+      filter: alpha(opacity=100);
+      font-weight: 700;
+      background: rgb(48, 22, 5);
+    }
+
+    @keyframes wrap_opacity_1 {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes wrap_opacity_0 {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+
+        <div id="box">
+          <ul class="list">
+            <li class="current"><img src="/IMG/home-mainvisual.png" width="100%"/></li>
+            <li><img src="/IMG/faqs_mainvisuals.png" width="100%" /></li>
+            <li><img src="/IMG/news_mainvisual.png" width="100%" /></li>
+            <li><img src="/IMG/products_mainvisual.png" width="100%" /></li>
+          </ul>
+          <ul class="count">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+          </ul>
+        </div>
+      
+      </div>
+
+
+<script>
+  let list = document.querySelector(".list");
+  let count = document.querySelector(".count");
+  let timer = null;
+  let current_num = 1;
+  let last_num = 0;
+
+  function f() {
+    if (current_num >= 4) {
+      current_num = 0;
+    }
+    list.children[last_num].className = "";
+    list.children[current_num].className = "current";
+    count.children[last_num].className = "";
+    count.children[current_num].className = "current";
+    last_num = current_num;
+    current_num += 1;
+  }
+
+  //页面加载，幻灯片即开始工作
+  window.addEventListener("load", function () {
+    timer = setInterval(f, 2000);
+  }, false);
+
+  //幻灯片添加鼠标事件，鼠标悬停，幻灯片停留在当前页
+  list.addEventListener("mouseenter", function () {
+    clearInterval(timer);
+  }, false);
+
+  list.addEventListener("mouseleave", function () {
+    timer = setInterval(f, 2000);
+  }, false);
+
+  //对count添加事件，为子节点代理
+  count.addEventListener("mouseover", function (event) {
+    clearInterval(timer);
+    if (event.target.tagName.toLowerCase() === "li") {
+      //对count初始化
+      for (let i = 0; i < list.children.length; i++) {
+        list.children[i].className = "";
+        count.children[i].className = "";
+      }
+      current_num = Number(event.target.innerHTML) - 1;
+      if (current_num === 0) {
+        last_num = 4;
+      } else {
+        last_num = current_num - 1;
+      }
+      list.children[current_num].className = "current";
+      count.children[current_num].className = "current";
+    }
+  }, false);
+
+  count.addEventListener("mouseout", function () {
+    timer = setInterval(f, 3000);
+  })
+
+</script> -->
+
+             
+
+            
+</article>     
+
+ </main>  
+
+
+
+     
+
+        
+     <footer>
+<div class="footertop"> 
+    <div class="footertopleft">
+        <div class="storyfooter">
+            <div ><img src="/IMG/PONGLOGO.svg" alt=""></div>
+            <div><p>"PONG" is known for crafting premium and aesthetically pleasing diffusers. We create unique fragrance blends, optimizing scent diffusion for a delightful and long-lasting sensory experience.</p></div>
+        </div>
+    </div>
+    <div class="footertopright">
+        <div class="footerbtn">
+         <div class="footerbtnll">
+            <div>ABOUT US</div>
+            <div class="fbtna ">
+                <a href="ABOUTUS.html">BRAND STORY</a>
+            </div>
+            <div >SOCIAL MEDIA</div>
+            <div class="sm">
+                <a href="#"><img src="/IMG/fb.svg" alt=""></a>
+                <a href="#"><img src="/IMG/ig.svg" alt=""></a>
+            </div>
+         </div>
+        </div>
+        <div class="footerbtn">
+            <div>PRODUCT</div>
+            <div class="fbtna">
+                <a href="#">HOW TO BUY</a>
+                <a href="#">HOW TO RETIURN</a>
+                <a href="#">PRIVACY POLICY</a>
+            </div>
+        </div>
+        <div class="footerbtn">
+            <div>CONTACT US</div>
+            <div class="fbtna">
+                <p>TIME / MON. - FRI. 10:30 - 17:00</p>
+                <p>TEL / 02-6605 0477</p>
+                <p>E-MAIL / service@pong.tw</p>
+                <p>ADDRESS /9F., No. 46, Fuxing Rd.,
+                  Zhongli Dist.</p>   
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+        <div class="footbottom">
+         <p class="pagetop"><a href="#top"> ▲ back to top </a></p>
+         <p class="copyright">This website is the capstone project of the 86th student of  TibaMe front-end engineer class. This platform is only for learning and display purposes<br><a href="mailto:jinjin@cute.edu.tw">reference</a></p>
+        </div>
+        </footer>
+
+</body>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+</link>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+</html>
