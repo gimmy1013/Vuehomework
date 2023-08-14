@@ -269,7 +269,7 @@ h3 {
     margin: auto;/* 標題三左側設定間距 */
     width: 80%;
     line-height: 1.5;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
 }
 
 /* 設定內容寬度上限 */
@@ -303,9 +303,9 @@ h3 {
     padding: 10px;
     margin-top: -10px;
     border: 1px solid black;
-    box-shadow:rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    /* box-shadow:rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
     background-color: white;
-    box-shadow: 50%;
+    /* box-shadow: 50%; */
 }
 .hnews .tag > a{
     width: fit-content;
@@ -934,12 +934,17 @@ footer{
      .askbtn{
         width: 80%;
      }
+     .wrap{
+        display: none;
+     }
      
-
+    article{
+        overflow-x: hidden;
+    }
+    section{
+        overflow-x: hidden;
+    }
      
-
-
-
 
 
 

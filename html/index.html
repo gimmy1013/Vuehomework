@@ -6,9 +6,7 @@
     <title>PONG</title>
     <meta name="description" content="PONG。">  <!-- 提供搜尋引擎關於網頁頁面內的重要資訊-->
     <link rel="stylesheet" href="../css/STYLEPONG.css"> <!-- 連結到STYLEPONG.css-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="../js/index.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -65,7 +63,7 @@
     
 <!-- 第一個article，命名為artnews-->
 <article id="artnews">  
-            <h2 class="h2news">NEWS</h2>
+            <h2 data-aos="zoom-in-right" data-aos-duration="1500" class="h2news">NEWS</h2>
             <div class="hnews" >
               <div class="hnewsl">  <!-- 類別開始，設定固定寬度900px-->
                  <div><img src="../IMG/home_news_rose.png" alt=""></div>
@@ -98,7 +96,7 @@
   <a href="NEWS.html">VIEW MORE</a>
 </div>  
 <article id="artbsr">   
-     <h2 class="h2bsr">BESTSELLER</h2>
+     <h2 data-aos="zoom-in-left" data-aos-duration="1500" class="h2bsr">BESTSELLER</h2>
         
      <div class="btn">
           <div class="b-wo"><a href="PRODUCTS.html">WOODY</a></div>
@@ -141,15 +139,16 @@
                 <p>"DAISY DREAMS" pops up with fresh blooms, evoking whimsical, joyful reveries.</p> 
             </div>
         </div>
-        <div class="vmbtn">
+        <div class="vmbtn" >
           <a href="PRODUCTS.html">VIEW MORE</a>
         </div>
 </article>
  <!-- 第三個article:game with pong-->        
 <article id="artgwp">     
-          <h2 class="h2gwp">PONG'S AMAZING STYLES FOR YOU</h2>
+          <h2 data-aos="zoom-in-right" data-aos-duration="1500" class="h2gwp">PONG'S AMAZING STYLES FOR YOU</h2>
                 <div class="f1">
-                      <h3> "Ease with PONG, an artisanal reed diffuser company known for its exquisite scents and elegant designs. Their carefully crafted diffusers infuse spaces with long-lasting, captivating fragrances, creating a harmonious and inviting atmosphere for any environment."" </h3>
+                      <h3 data-aos="fade-up"
+                      data-aos-anchor-placement="top-bottom" data-aos-duration="1500"> "Ease with PONG, an artisanal reed diffuser company known for its exquisite scents and elegant designs. Their carefully crafted diffusers infuse spaces with long-lasting, captivating fragrances, creating a harmonious and inviting atmosphere for any environment." </h3>
                       <!-- <img src="../IMG/aboutus-mainvisual.png" alt=""> -->
                     <!-- <form>
                       <button class="askbtn" onclick = "A()">THRILLING</button>
@@ -172,28 +171,27 @@
                         alert("Recommondation:FRUITY collection >>>> SWEET ATMOSPHERE");
                       }
                     </script> -->
-<!-- <style>
-.wrap{
-  width: 80%;
-  margin: auto;
-}
- #box {
+<style>
+   .wrap{
+    width: 100%;
+   }
+
+    #box {
       position: relative;
       width: 100%;
-      height: 60vh;
-      background: #fff;
+      height: 40vh;
+      /* background: #fff; */
       border-radius: 5px;
-      /* border: 8px solid #fff; */
-      margin: 10px auto;
+      /* border: 8px solid #fff;
+      margin: 10px auto; */
     }
-
 
     #box .list {
       position: relative;
       width: 100%;
-      height: 60vh;
+      height: 40vh;
       overflow: hidden;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
     }
 
     #box .list li {
@@ -215,7 +213,7 @@
 
     #box .count {
       position: absolute;
-      /* right: 40%; */
+      right: 45%;
       bottom: 5px;
     }
 
@@ -267,7 +265,8 @@
 
         <div id="box">
           <ul class="list">
-            <li class="current"><img src="../IMG/home-mainvisual.png" width="100%"/></li>
+            <li class="current"><img src="../IMG/home-mainvisual.png" width="100%"
+                                     /></li>
             <li><img src="../IMG/faqs_mainvisuals.png" width="100%" /></li>
             <li><img src="../IMG/news_mainvisual.png" width="100%" /></li>
             <li><img src="../IMG/products_mainvisual.png" width="100%" /></li>
@@ -340,7 +339,7 @@
     timer = setInterval(f, 3000);
   })
 
-</script> -->
+</script>
 
              
 
@@ -416,6 +415,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </link>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
+<script>
+  AOS.init();
+</script>
 </html>
