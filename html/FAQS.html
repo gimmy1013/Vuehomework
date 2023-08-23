@@ -20,24 +20,70 @@
     <div class="navigation">
         <div class="logo"><a href="index.html"><img src="../IMG/PONGLOGO.svg"></a></div>
         <nav class="main-nav"> <!-- 導覽列設定開始-->
+            <!-- let headerList = [{},{},{},{}] -->
+
+           
+           <!-- console.log(headerList[1].title) -->
+         <!-- let arr=[123,'456'] 
+        console.log(arr[1]) index-->
+
+        <!-- let obj={
+            link:tree
+        } 
+    console.log(obj.link)-->
             <ul>
+                <!-- for(let i=0;i< headerList.length; i++){
+                    
+                    console.log(headerList[i])
+                } -->
+                <!-- let arr = [1,2,3] -->
+                <!-- v-for="i in arr" -->
+                <!-- 1,2,3 -->
+                 <!-- headerList:[
+            {link:'ABOUTUS.html',title:'ABOUT US'},
+            {link:'NEWS.html',title:'NEWS'},
+            {link:'PRODUCTS.html',title:'PRODUCTS'},
+            {link:'CONTACTUS.html',title:'CONTACT US'},
+            {link:'FAQS.html',title:'FAQs'},
+            {link:'login.html',title:'LOGIN'},
+            {link:'bag.html',title:'BAG'},
+           ], -->
+                    <!-- let arr=[123,'str',true,[],{}] -->
+        <!-- headerList[2].link -->
+            <!-- let obj={
+                link:'tree',
+                src:'water'
+            }
+            console.log(obj) -->
+     <!-- for(let i=0 ;i<headerList.length;i++) -->
+                <li v-for="item in headerList">
+                    <!-- 變數名 類似i -->
+                    <a :href="item.link">{{item.title}}</a>
+                    
+             
+                </li>    
+               
+                <!-- <li v-for="item in headerList">
+                    <a :href="item.link">{{item.title}}</a>
+                </li>  
                 <li v-for="item in headerList">
                     <a :href="item.link">{{item.title}}</a>
-                </li>            
+                </li>  
+                <li v-for="item in headerList">
+                    <a :href="item.link">{{item.title}}</a>
+                </li>           -->
             </ul>
           </nav>  
         <div class="icon">
-                <div class="login"><a href="login.html"><img src="../IMG/login_icon.svg"></a></div>
-                <div class="bag"><a href="bag.html"><img src="../IMG/bag_icon.svg"></a></div>
-                <div class="search"><a href="search.html"><img src="../IMG/search_icon.svg"></a></div>
+                <div v-for="item in iconList" :class="item.eClass">
+                    <a :href="item.eHref"><img :src="item.eSrc" alt=""></a>
+                </div>
         </div>
     </div>  
 
     <div class="hb">
       <label for="menu-switch">
-          <span></span>
-          <span></span>
-          <span></span>
+        <span v-for="i in 3"></span>
       </label>
     </div>
 </header>
@@ -100,10 +146,8 @@
 
 </div>
 
-<div class="swbtn">
-    <div class="al"><a href="#">ᐊ</a></div>
-    <div class="pn1"><a href="#">1</a></div>
-    <div class="ar"><a href="#">ᐅ</a></div>
+<div class="swbtn"> 
+    <div v-for="i in swBtnList" :class="i.eClass"><a href="">{{i.eVal}}</a></div>
 </div>
 
 
@@ -132,28 +176,27 @@
                     <a href="ABOUTUS.html">BRAND STORY</a>
                 </div>
                 <div>SOCIAL MEDIA</div>
-                <div class="sm">
-                    <a href="#"><img src="../IMG/fb.svg" alt=""></a>
-                    <a href="#"><img src="../IMG/ig.svg" alt=""></a>
+                <div class="sm">                
+                    <a href="" v-for="i in smList">
+                        <img :src="i" alt="">
+                    </a>
                 </div>
              </div>
             </div>
             <div class="footerbtn">
                 <div>PRODUCT</div>
                 <div class="fbtna">
-                    <a href="#">HOW TO BUY</a>
-                    <a href="#">HOW TO RETIURN</a>
-                    <a href="#">PRIVACY POLICY</a>
-                </div>
+                    <a href="#" v-for="i in fbtnaList2">
+                     {{i}}
+                    </a>
+                 </div>
             </div>
             <div class="footerbtn">
                 <div>CONTACT US</div>
                 <div class="fbtna">
-                    <p>TIME / MON. - FRI. 10:30 - 17:00</p>
-                    <p>TEL / 02-6605 0477</p>
-                    <p>E-MAIL / service@pong.tw</p>
-                    <p>ADDRESS /9F., No. 46, Fuxing Rd.,
-                      Zhongli Dist.</p>   
+                    <p v-for="i in fbtnaList">
+                        {{i}}
+                    </p>
                 </div>
             </div>
         </div>
@@ -168,6 +211,7 @@
              <p class="copyright">This website is the capstone project of the 86th student of  TibaMe front-end engineer class. This platform is only for learning and display purposes<br><a href="mailto:jinjin@cute.edu.tw">reference</a></p>
             </div>
             </footer>
+           
     </div>
    
     <script src="https://unpkg.com/vue@next"></script>
@@ -175,6 +219,10 @@
       const app = Vue.createApp({
         data() {          
           return {
+            // let obj={key:'val'}
+            // let headerList = [{headerList:'tree'},{},{},{}]
+            // let iiii = 
+    
            headerList:[
             {link:'ABOUTUS.html',title:'ABOUT US'},
             {link:'NEWS.html',title:'NEWS'},
@@ -183,7 +231,42 @@
             {link:'FAQS.html',title:'FAQs'},
             {link:'login.html',title:'LOGIN'},
             {link:'bag.html',title:'BAG'},
-           ]
+           ],
+           iconList:[
+            {eClass:'login',eHref:'login.html',eSrc:'../IMG/login_icon.svg'},
+            {eClass:'bag',eHref:'bag.html',eSrc:'../IMG/bag_icon.svg'},
+            {eClass:'search',eHref:'search.html',eSrc:'../IMG/search_icon.svg'}
+           ],
+  
+       swBtnList:[
+        {eClass:'al',eVal:'ᐊ'},
+        {eClass:'pn1',eVal:'1'},
+        {eClass:'ar',eVal:'ᐅ'}
+       ],
+   
+       fbtnaList:[
+        'TIME / MON. - FRI. 10:30 - 17:00',
+        'TEL / 02-6605 0477',
+        'E-MAIL / service@pong.tw',
+        'ADDRESS /9F., No. 46, Fuxing Rd.,Zhongli Dist.'
+       ],
+       fbtnaList2:[
+        'HOW TO BUY',
+        'HOW TO RETIURN',
+        'PRIVACY POLICY'
+       ],
+
+       smList:[
+            '../IMG/fb.svg','../IMG/ig.svg'
+       ],
+    //    <div class="thesus">
+    //     <div class="btn">ABOUT FRAGRANCE LASTING</div>
+    //     <div class="inside">The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.</div>
+    // </div>
+       thesusList:[
+        {eFirstClass:'thesus',eSecClass:'btn',eThirdClass:'inside',secVal:'ABOUT FRAGRANCE LASTING',thirdVal:'The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.'}
+       ]
+    
           };
         },
       }).mount("#app");
