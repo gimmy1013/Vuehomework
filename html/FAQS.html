@@ -11,21 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="icon" href="../IMG/labelicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="../IMG/labelicon.ico" type="image/x-icon"/>
+  
 </head>
 <body>
+<div id="app">
 <input type="checkbox" name="" id="menu-switch">
 <header class="main-header">
     <div class="navigation">
         <div class="logo"><a href="index.html"><img src="../IMG/PONGLOGO.svg"></a></div>
         <nav class="main-nav"> <!-- 導覽列設定開始-->
             <ul>
-                <li><a href="ABOUTUS.html">ABOUT US</a></li>
-                <li><a href="NEWS.html">NEWS</a></li>
-                <li><a href="PRODUCTS.html">PRODUCTS</a></li>
-                <li><a href="CONTACTUS.html">CONTACT US</a></li>
-                <li><a href="FAQS.html">FAQs</a></li>
-                <li><a href="login.html">LOGIN</a></li>
-                <li><a href="bag.html">BAG</a></li>
+                <li v-for="item in headerList">
+                    <a :href="item.link">{{item.title}}</a>
+                </li>            
             </ul>
           </nav>  
         <div class="icon">
@@ -106,7 +104,7 @@
     <div class="al"><a href="#">ᐊ</a></div>
     <div class="pn1"><a href="#">1</a></div>
     <div class="ar"><a href="#">ᐅ</a></div>
-   </div>
+</div>
 
 
 
@@ -170,6 +168,25 @@
              <p class="copyright">This website is the capstone project of the 86th student of  TibaMe front-end engineer class. This platform is only for learning and display purposes<br><a href="mailto:jinjin@cute.edu.tw">reference</a></p>
             </div>
             </footer>
-    
-    </body>
+    </div>
+   
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {          
+          return {
+           headerList:[
+            {link:'ABOUTUS.html',title:'ABOUT US'},
+            {link:'NEWS.html',title:'NEWS'},
+            {link:'PRODUCTS.html',title:'PRODUCTS'},
+            {link:'CONTACTUS.html',title:'CONTACT US'},
+            {link:'FAQS.html',title:'FAQs'},
+            {link:'login.html',title:'LOGIN'},
+            {link:'bag.html',title:'BAG'},
+           ]
+          };
+        },
+      }).mount("#app");
+    </script>
+     </body>
     </html>
