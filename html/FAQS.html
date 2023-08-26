@@ -11,35 +11,33 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="icon" href="../IMG/labelicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="../IMG/labelicon.ico" type="image/x-icon"/>
+  
 </head>
 <body>
+<div id="app">
 <input type="checkbox" name="" id="menu-switch">
 <header class="main-header">
     <div class="navigation">
         <div class="logo"><a href="index.html"><img src="../IMG/PONGLOGO.svg"></a></div>
-        <nav class="main-nav"> <!-- 導覽列設定開始-->
-            <ul>
-                <li><a href="ABOUTUS.html">ABOUT US</a></li>
-                <li><a href="NEWS.html">NEWS</a></li>
-                <li><a href="PRODUCTS.html">PRODUCTS</a></li>
-                <li><a href="CONTACTUS.html">CONTACT US</a></li>
-                <li><a href="FAQS.html">FAQs</a></li>
-                <li><a href="login.html">LOGIN</a></li>
-                <li><a href="bag.html">BAG</a></li>
+        <nav class="main-nav"> <!-- 導覽列設定開始-->          
+            <ul>            
+                <li v-for="item in headerList">              
+                    <a :href="item.link">{{item.title}}</a>           
+                </li>    
+               
+             
             </ul>
           </nav>  
         <div class="icon">
-                <div class="login"><a href="login.html"><img src="../IMG/login_icon.svg"></a></div>
-                <div class="bag"><a href="bag.html"><img src="../IMG/bag_icon.svg"></a></div>
-                <div class="search"><a href="search.html"><img src="../IMG/search_icon.svg"></a></div>
+                <div v-for="item in iconList" :class="item.eClass">
+                    <a :href="item.eHref"><img :src="item.eSrc" alt=""></a>
+                </div>
         </div>
     </div>  
 
     <div class="hb">
       <label for="menu-switch">
-          <span></span>
-          <span></span>
-          <span></span>
+        <span v-for="i in 3"></span>
       </label>
     </div>
 </header>
@@ -53,71 +51,20 @@
            </div>
 <article>
 <div class="bigpack">
- <div class="lilpac">
+ <div class="lilpac" v-for="i in lilpacArr">
     <div class="pic">
-        <div><img src="../IMG/faqs-products.png" alt=""></div>
+        <div><img :src="i.imgSrc" alt=""></div>
     </div>
     <div class="thesus">
-        <div class="btn">ABOUT FRAGRANCE LASTING</div>
-        <div class="inside">The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.</div>
+        <div class="btn">{{i.btnTxt}}</div>
+        <div class="inside">{{i.insideTxt}}</div>
     </div>
 </div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-payment.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT PAYMENT METHODS</div>
-        <div class="inside">You can pay for orders on our online website using major credit cards, PayPal, and other secure payment gateways. We ensure safe and encrypted transactions for a seamless shopping experience.</div>
-    </div>
 </div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-shipping.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT DELIVERY TIMEFRAME</div>
-        <div class="inside">Delivery timeframes for our online website vary depending on your location and the shipping method chosen. Typically, orders are delivered within 3-7 business days for domestic shipments.</div>
-    </div>
+<div class="swbtn"> 
+    <div v-for="i in swBtnList" :class="i.eClass"><a href="">{{i.eVal}}</a></div>
 </div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-source.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT OUR COLLABORATION</div>
-        <div class="inside">
-            Our exclusive collaborations with the esteemed organic brand, Florihana, bring our reed diffusers to a new level. Infused with their premium organic essential oils, our products offer an unparalleled sensory journey.</div>
-    </div>
-</div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-environment.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT ENVIRONMENTAL CARE</div>
-        <div class="inside">Our diffusers are crafted using eco-friendly materials, and we promote sustainability by using natural ingredients and recyclable packaging, ensuring a green and delightful aromatic experience for all.</div>
-    </div>
-</div>
-
-</div>
-
-<div class="swbtn">
-    <div class="al"><a href="#">ᐊ</a></div>
-    <div class="pn1"><a href="#">1</a></div>
-    <div class="ar"><a href="#">ᐅ</a></div>
-   </div>
-
-
-
-
 </article>
-
-
-
-
-
-
 <footer>
     <div class="footertop"> 
         <div class="footertopleft">
@@ -134,28 +81,27 @@
                     <a href="ABOUTUS.html">BRAND STORY</a>
                 </div>
                 <div>SOCIAL MEDIA</div>
-                <div class="sm">
-                    <a href="#"><img src="../IMG/fb.svg" alt=""></a>
-                    <a href="#"><img src="../IMG/ig.svg" alt=""></a>
+                <div class="sm">                
+                    <a href="" v-for="i in smList">
+                        <img :src="i" alt="">
+                    </a>
                 </div>
              </div>
             </div>
-            <div class="footerbtn">
+            <div class="footerbtn" >
                 <div>PRODUCT</div>
-                <div class="fbtna">
-                    <a href="#">HOW TO BUY</a>
-                    <a href="#">HOW TO RETIURN</a>
-                    <a href="#">PRIVACY POLICY</a>
-                </div>
+                <div class="fbtna" >
+                    <a href="#" v-for="i in fbtnaList2">
+                     {{i}}
+                    </a>
+                 </div>
             </div>
             <div class="footerbtn">
                 <div>CONTACT US</div>
                 <div class="fbtna">
-                    <p>TIME / MON. - FRI. 10:30 - 17:00</p>
-                    <p>TEL / 02-6605 0477</p>
-                    <p>E-MAIL / service@pong.tw</p>
-                    <p>ADDRESS /9F., No. 46, Fuxing Rd.,
-                      Zhongli Dist.</p>   
+                    <p v-for="i in fbtnaList">
+                        {{i}}
+                    </p>
                 </div>
             </div>
         </div>
@@ -170,6 +116,101 @@
              <p class="copyright">This website is the capstone project of the 86th student of  TibaMe front-end engineer class. This platform is only for learning and display purposes<br><a href="mailto:jinjin@cute.edu.tw">reference</a></p>
             </div>
             </footer>
+           
+    </div>
+   
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {          
+          return {
+            // let obj={key:'val'}
+            // let headerList = [{headerList:'tree'},{},{},{}]
+            // let iiii = 
     
-    </body>
+           headerList:[
+            {link:'ABOUTUS.html',title:'ABOUT US'},
+            {link:'NEWS.html',title:'NEWS'},
+            {link:'PRODUCTS.html',title:'PRODUCTS'},
+            {link:'CONTACTUS.html',title:'CONTACT US'},
+            {link:'FAQS.html',title:'FAQs'},
+            {link:'login.html',title:'LOGIN'},
+            {link:'bag.html',title:'BAG'},
+           ],
+           iconList:[
+            {eClass:'login',eHref:'login.html',eSrc:'../IMG/login_icon.svg'},
+            {eClass:'bag',eHref:'bag.html',eSrc:'../IMG/bag_icon.svg'},
+            {eClass:'search',eHref:'search.html',eSrc:'../IMG/search_icon.svg'}
+           ],
+  
+       swBtnList:[
+        {eClass:'al',eVal:'ᐊ'},
+        {eClass:'pn1',eVal:'1'},
+        {eClass:'ar',eVal:'ᐅ'}
+       ],
+   
+       fbtnaList:[
+        'TIME / MON. - FRI. 10:30 - 17:00',
+        'TEL / 02-6605 0477',
+        'E-MAIL / service@pong.tw',
+        'ADDRESS /9F., No. 46, Fuxing Rd.,Zhongli Dist.'
+       ],
+       fbtnaList2:[
+        'HOW TO BUY',
+        'HOW TO RETIURN',
+        'PRIVACY POLICY',
+        
+       ],
+       fbtnaList3:[
+        {leftBuy:'HOW TO BUY',leftRetiurn:'HOW TO RETIURN',leftPrivacy:'PRIVACY POLICY'},
+        {rightTime:'TIME / MON. - FRI. 10:30 - 17:00',rightTel:'TEL / 02-6605 0477',rightEmail:'E-MAIL / service@pong.tw',rightAddress:'ADDRESS /9F., No. 46, Fuxing Rd.,Zhongli Dist.'}
+       ],
+       fbtnaList4:[
+        ['HOW TO BUY','HOW TO RETIURN','PRIVACY POLICY'],
+        ['TIME / MON. - FRI. 10:30 - 17:00','TEL / 02-6605 0477','E-MAIL / service@pong.tw','ADDRESS /9F., No. 46, Fuxing Rd.,Zhongli Dist.']
+       ],
+    footerTitle:['PRODUCT','CONTACT US'],
+       smList:[
+            '../IMG/fb.svg','../IMG/ig.svg'
+       ],
+       lilpacArr:[
+            {
+                imgSrc:'../IMG/faqs-products.png',
+                btnTxt:'ABOUT FRAGRANCE LASTING',
+                insideTxt:'The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.'
+            },
+            {
+                imgSrc:'../IMG/faqs-payment.png',
+                btnTxt:'ABOUT PAYMENT METHODS',
+                insideTxt:'You can pay for orders on our online website using major credit cards, PayPal, and other secure payment gateways. We ensure safe and encrypted transactions for a seamless shopping experience.'
+            },
+            {
+                imgSrc:'../IMG/faqs-shipping.png',
+                btnTxt:'ABOUT DELIVERY TIMEFRAME',
+                insideTxt:'Delivery timeframes for our online website vary depending on your location and the shipping method chosen. Typically, orders are delivered within 3-7 business days for domestic shipments.'
+            },
+            {
+                imgSrc:'../IMG/faqs-source.png',
+                btnTxt:'ABOUT OUR COLLABORATION',
+                insideTxt:'Our exclusive collaborations with the esteemed organic brand, Florihana, bring our reed diffusers to a new level. Infused with their premium organic essential oils, our products offer an unparalleled sensory journey.'
+            },
+            {
+                imgSrc:'../IMG/faqs-environment.png',
+                btnTxt:'ABOUT ENVIRONMENTAL CARE',
+                insideTxt:'Our diffusers are crafted using eco-friendly materials, and we promote sustainability by using natural ingredients and recyclable packaging, ensuring a green and delightful aromatic experience for all.'
+            }
+       ],
+    //    <div class="thesus">
+    //     <div class="btn">ABOUT FRAGRANCE LASTING</div>
+    //     <div class="inside">The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.</div>
+    // </div>
+       thesusList:[
+        {eFirstClass:'thesus',eSecClass:'btn',eThirdClass:'inside',secVal:'ABOUT FRAGRANCE LASTING',thirdVal:'The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.'}
+       ]
+    
+          };
+        },
+      }).mount("#app");
+    </script>
+     </body>
     </html>
