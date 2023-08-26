@@ -18,7 +18,7 @@
 <header class="main-header">
     <div class="navigation">
         <div class="logo"><a href="index.html"><img src="../IMG/PONGLOGO.svg"></a></div>
-        <nav class="main-nav"> <!-- 導覽列設定開始-->
+        <nav class="main-nav"> 
             <ul>
                 <li><a href="ABOUTUS.html">ABOUT US</a></li>
                 <li><a href="NEWS.html">NEWS</a></li>
@@ -54,13 +54,7 @@
             </div>
        </div>
 <section class="btnrsec">      <!-- 第二個articl區塊，命名為html，直接設定固定寬度-->  
-        <!-- <div class="btn">
-             <div class="b-wo"><a href="javascript:void(0)">WOODY</a></div>
-             <div class="b-fl"><a href="javascript:void(0)">FLORAL</a></div>
-             <div class="b-oc"><a href="javascript:void(0)">OCEAN</a></div>
-             <div class="b-or"><a href="javascript:void(0)">ORIENTAL</a></div>
-             <div class="b-fr"><a href="javascript:void(0)">FRUITY</a></div>
-        </div> -->
+
         <div class="bar-block">
             <div><a href="javascript:void(0)" class="bar-item button tablink testbtn" onclick="openClass(event, 'class1')"><p>WOODY</p></a></div>
             <div><a href="javascript:void(0)" class="bar-item button tablink" onclick="openClass(event, 'class2')"><p>FLORAL</p></a></div>
@@ -457,6 +451,22 @@
              <p class="copyright">This website is the capstone project of the 86th student of  TibaMe front-end engineer class. This platform is only for learning and display purposes<br><a href="mailto:jinjin@cute.edu.tw">reference</a></p>
             </div>
             </footer>
-    
+            <script src="https://unpkg.com/vue@next"></script>
+            <script>
+                Vue.createApp({
+                    data(){
+                        return {
+                                blood:[`A`,`B`,`C`,`D`,`真`],//array
+                                count:32165,//number
+                                obj:{f:1,
+                                g:0},  //object
+                                name:`gimmy`, //string
+                                good:true,//boolean
+                                aqua:false,
+                                
+                        }
+                    }
+                }).mount("#app");
+            </script>
     </body>
     </html>

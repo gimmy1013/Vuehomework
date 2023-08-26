@@ -14,24 +14,22 @@
 </head>
 <body>
 <input type="checkbox" name="" id="menu-switch">
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox" name="" id="menu-switch">
 <header class="main-header">
     <div class="navigation">
         <div class="logo"><a href="index.html"><img src="../IMG/PONGLOGO.svg"></a></div>
         <nav class="main-nav"> <!-- 導覽列設定開始-->
             <ul>
-                <li><a href="ABOUTUS.html">ABOUT US</a></li>
-                <li><a href="NEWS.html">NEWS</a></li>
-                <li><a href="PRODUCTS.html">PRODUCTS</a></li>
-                <li><a href="CONTACTUS.html">CONTACT US</a></li>
-                <li><a href="FAQS.html">FAQs</a></li>
-                <li><a href="login.html">LOGIN</a></li>
-                <li><a href="bag.html">BAG</a></li>
+                <li v-for="item in navlist" >
+                    <a :href="item.href"> {{item.content}} </a>
+                </li>
             </ul>
           </nav>  
         <div class="icon">
-                <div class="login"><a href="login.html"><img src="../IMG/login_icon.svg"></a></div>
-                <div class="bag"><a href="bag.html"><img src="../IMG/bag_icon.svg"></a></div>
-                <div class="search"><a href="search.html"><img src="../IMG/search_icon.svg"></a></div>
+                <div v-for="item in iconlist" :class="item.class"><a :href="item.href"><img :src="item.src"></a></div>
         </div>
     </div>  
 
@@ -55,18 +53,12 @@
 <section id="newschoice">      
        <form class="choice">
         <select name="topic" class="ct">
-        　<option value="LATEST LAUNCH">LATEST LAUNCH</option>
-        　<option value="SALE">SALE</option>
-        　<option value="COLLABORATION">COLLABORATION</option>
-        　<option value="NEW MATERIAL">NEW MATERIAL</option>
+        　<option :value="item.value" v-for="item in topiclist">{{item.value}}</option>
         </select>
         </form>
         <form class="choice">
             <select name="date" class="cd">
-            　<option value="2023 / 07">2023 / 07</option>
-            　<option value="2023 / 06">2023 / 06</option>
-            　<option value="2023 / 05">2023 / 05</option>
-            　<option value="2023 / 04">2023 / 04</option>
+            　<option :value="item.value" v-for="item in datalist">{{item.value}}</option>
             </select>
         </form>
 </section>
@@ -75,30 +67,15 @@
 <!-- 第一個article，命名為artnews-->
 <article id="artnews">  
     <div class="hnews">
-      <div class="hnewsl">  <!-- 類別開始，設定固定寬度900px-->
-         <div><img src="../IMG/home_news_rose.png" alt=""></div>
+      <div class="hnewsl" v-for="item in newlist">  <!-- 類別開始，設定固定寬度900px-->
+         <div><img :src="item.src" alt="" ></div>
          <div class="blanknews">
             <div class="tag"><a href="NEWS.html">LATEST LAUNCH</a></div>
-            <div class="tags"><p>2023.07.05</p></div>
-         <p>ROSY CHICK, the very new product with Damask rose, will be lauched at July 01.</p>
+            <div class="tags"><p>{{item.date}}</p></div>
+         <p>{{item.content}}</p>
          </div>
       </div>
-      <div class="hnewsm">  <!-- 類別開始，設定固定寬度900px-->
-        <div><img src="../IMG/new-um.png" alt=""></div>
-        <div class="blanknews">
-            <div class="tag"><a href="NEWS.html">LATEST LAUNCH</a></div>
-            <div class="tags"><p>2023.07.10</p></div>
-         <p>SPICED EMBERS - Launching July 10. Warm spices, cozy autumn nights.</p>
-         </div>
-       </div>
-      <div class="hnewsr">  <!-- 類別開始，設定固定寬度900px-->
-        <div><img src="../IMG/newstr.png" alt=""></div>
-        <div class="blanknews">
-            <div class="tag"><a href="NEWS.html">LATEST LAUNCH</a></div>
-            <div class="tags"><p>2023.07.12</p></div>
-         <p>CITRUS SERENADE - Launching July 12. Zesty citrus symphony, energizing aura.</p>
-         </div>
-        </div>
+
     </div>
 
     <h2 class="dotline"></h2>
@@ -196,5 +173,91 @@
             </div>
             </footer>
     
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>  
+        const app = Vue.createApp({
+            data () {
+                return {
+                    navlist:[
+                        {href:'ABOUTUS.html',
+                        content: 'ABOUT US',
+                        },
+                        {href:'NEWS.html',
+                        content: 'NEWS',
+                        },
+                        {href:'PRODUCTS.html',
+                        content: 'PRODUCTS',
+                        },
+                        {href:'CONTACTUS.html',
+                        content: 'CONTACT US',
+                        },
+                        {href:'FAQS.html',
+                        content: 'FAQs',
+                        },
+                        {href:'login.html',
+                        content: 'LOGIN',
+                        },
+                        {href:'bag.html',
+                        content: 'BAG',
+                        }
+                     ],
+
+                    iconlist: [
+                        {class: `login`,
+                        href: `login.html`,
+                        src: "../IMG/login_icon.svg"
+                        },
+                        {class:` bag`,
+                        href: `bag.html`,
+                        src:" ./IMG/bag_icon.svg"
+                        },
+                        {class:` search`,
+                        href: `search.html`,
+                        src:" ../IMG/search_icon.svg"
+                        }
+                    ],
+                    topiclist: [
+                        {value:`LASTEST LAUNCH`
+                        },
+                        {value:`SALE`
+                        },
+                        {value:`COLLABORATION`
+                        },
+                        {value:`NEW MATERIAL`
+                        }
+                    ],
+                    datalist: [
+                        {value:`2023 / 06`
+                        },
+                        {value:`2023 / 05`
+                        },
+                        {value:`2023 / 04`
+                        },
+                    ],
+                    newslist: [
+                        {src:`../IMG/home_news_rose.png`,
+                        date: `2023.07.05`,
+                        content: "ROSY CHICK, the very new product with Damask rose, will be lauched at July 01"
+                        },
+                        {src:`../IMG/new-um.png`,
+                        date: `2023.07.10`,
+                        content:" SPICED EMBERS - Launching July 10. Warm spices, cozy autumn nights."
+                        },
+                        {src:`../IMG/newstr.png`,
+                        date: `2023.07.12`,
+                        content: "CITRUS SERENADE - Launching July 12. Zesty citrus symphony, energizing aura."
+                        },
+                    ]
+
+
+
+
+                };
+            },
+
+        }).mount('#app')
+    </script>
+
     </body>
     </html>
