@@ -19,59 +19,13 @@
 <header class="main-header">
     <div class="navigation">
         <div class="logo"><a href="index.html"><img src="../IMG/PONGLOGO.svg"></a></div>
-        <nav class="main-nav"> <!-- 導覽列設定開始-->
-            <!-- let headerList = [{},{},{},{}] -->
-
-           
-           <!-- console.log(headerList[1].title) -->
-         <!-- let arr=[123,'456'] 
-        console.log(arr[1]) index-->
-
-        <!-- let obj={
-            link:tree
-        } 
-    console.log(obj.link)-->
-            <ul>
-                <!-- for(let i=0;i< headerList.length; i++){
-                    
-                    console.log(headerList[i])
-                } -->
-                <!-- let arr = [1,2,3] -->
-                <!-- v-for="i in arr" -->
-                <!-- 1,2,3 -->
-                 <!-- headerList:[
-            {link:'ABOUTUS.html',title:'ABOUT US'},
-            {link:'NEWS.html',title:'NEWS'},
-            {link:'PRODUCTS.html',title:'PRODUCTS'},
-            {link:'CONTACTUS.html',title:'CONTACT US'},
-            {link:'FAQS.html',title:'FAQs'},
-            {link:'login.html',title:'LOGIN'},
-            {link:'bag.html',title:'BAG'},
-           ], -->
-                    <!-- let arr=[123,'str',true,[],{}] -->
-        <!-- headerList[2].link -->
-            <!-- let obj={
-                link:'tree',
-                src:'water'
-            }
-            console.log(obj) -->
-     <!-- for(let i=0 ;i<headerList.length;i++) -->
-                <li v-for="item in headerList">
-                    <!-- 變數名 類似i -->
-                    <a :href="item.link">{{item.title}}</a>
-                    
-             
+        <nav class="main-nav"> <!-- 導覽列設定開始-->          
+            <ul>            
+                <li v-for="item in headerList">              
+                    <a :href="item.link">{{item.title}}</a>           
                 </li>    
                
-                <!-- <li v-for="item in headerList">
-                    <a :href="item.link">{{item.title}}</a>
-                </li>  
-                <li v-for="item in headerList">
-                    <a :href="item.link">{{item.title}}</a>
-                </li>  
-                <li v-for="item in headerList">
-                    <a :href="item.link">{{item.title}}</a>
-                </li>           -->
+             
             </ul>
           </nav>  
         <div class="icon">
@@ -97,69 +51,20 @@
            </div>
 <article>
 <div class="bigpack">
- <div class="lilpac">
+ <div class="lilpac" v-for="i in lilpacArr">
     <div class="pic">
-        <div><img src="../IMG/faqs-products.png" alt=""></div>
+        <div><img :src="i.imgSrc" alt=""></div>
     </div>
     <div class="thesus">
-        <div class="btn">ABOUT FRAGRANCE LASTING</div>
-        <div class="inside">The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.</div>
+        <div class="btn">{{i.btnTxt}}</div>
+        <div class="inside">{{i.insideTxt}}</div>
     </div>
 </div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-payment.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT PAYMENT METHODS</div>
-        <div class="inside">You can pay for orders on our online website using major credit cards, PayPal, and other secure payment gateways. We ensure safe and encrypted transactions for a seamless shopping experience.</div>
-    </div>
 </div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-shipping.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT DELIVERY TIMEFRAME</div>
-        <div class="inside">Delivery timeframes for our online website vary depending on your location and the shipping method chosen. Typically, orders are delivered within 3-7 business days for domestic shipments.</div>
-    </div>
-</div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-source.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT OUR COLLABORATION</div>
-        <div class="inside">
-            Our exclusive collaborations with the esteemed organic brand, Florihana, bring our reed diffusers to a new level. Infused with their premium organic essential oils, our products offer an unparalleled sensory journey.</div>
-    </div>
-</div>
-<div class="lilpac">
-    <div class="pic">
-        <div><img src="../IMG/faqs-environment.png" alt=""></div>
-    </div>
-    <div class="thesus">
-        <div class="btn">ABOUT ENVIRONMENTAL CARE</div>
-        <div class="inside">Our diffusers are crafted using eco-friendly materials, and we promote sustainability by using natural ingredients and recyclable packaging, ensuring a green and delightful aromatic experience for all.</div>
-    </div>
-</div>
-
-</div>
-
 <div class="swbtn"> 
     <div v-for="i in swBtnList" :class="i.eClass"><a href="">{{i.eVal}}</a></div>
 </div>
-
-
-
-
 </article>
-
-
-
-
-
-
 <footer>
     <div class="footertop"> 
         <div class="footertopleft">
@@ -183,9 +88,9 @@
                 </div>
              </div>
             </div>
-            <div class="footerbtn">
+            <div class="footerbtn" >
                 <div>PRODUCT</div>
-                <div class="fbtna">
+                <div class="fbtna" >
                     <a href="#" v-for="i in fbtnaList2">
                      {{i}}
                     </a>
@@ -253,11 +158,47 @@
        fbtnaList2:[
         'HOW TO BUY',
         'HOW TO RETIURN',
-        'PRIVACY POLICY'
+        'PRIVACY POLICY',
+        
        ],
-
+       fbtnaList3:[
+        {leftBuy:'HOW TO BUY',leftRetiurn:'HOW TO RETIURN',leftPrivacy:'PRIVACY POLICY'},
+        {rightTime:'TIME / MON. - FRI. 10:30 - 17:00',rightTel:'TEL / 02-6605 0477',rightEmail:'E-MAIL / service@pong.tw',rightAddress:'ADDRESS /9F., No. 46, Fuxing Rd.,Zhongli Dist.'}
+       ],
+       fbtnaList4:[
+        ['HOW TO BUY','HOW TO RETIURN','PRIVACY POLICY'],
+        ['TIME / MON. - FRI. 10:30 - 17:00','TEL / 02-6605 0477','E-MAIL / service@pong.tw','ADDRESS /9F., No. 46, Fuxing Rd.,Zhongli Dist.']
+       ],
+    footerTitle:['PRODUCT','CONTACT US'],
        smList:[
             '../IMG/fb.svg','../IMG/ig.svg'
+       ],
+       lilpacArr:[
+            {
+                imgSrc:'../IMG/faqs-products.png',
+                btnTxt:'ABOUT FRAGRANCE LASTING',
+                insideTxt:'The fragrance in "PONG" products is carefully formulated to last between 4 to 6 weeks, providing an enduring and delightful aroma that lingers in your space, creating a captivating and immersive sensory experience.'
+            },
+            {
+                imgSrc:'../IMG/faqs-payment.png',
+                btnTxt:'ABOUT PAYMENT METHODS',
+                insideTxt:'You can pay for orders on our online website using major credit cards, PayPal, and other secure payment gateways. We ensure safe and encrypted transactions for a seamless shopping experience.'
+            },
+            {
+                imgSrc:'../IMG/faqs-shipping.png',
+                btnTxt:'ABOUT DELIVERY TIMEFRAME',
+                insideTxt:'Delivery timeframes for our online website vary depending on your location and the shipping method chosen. Typically, orders are delivered within 3-7 business days for domestic shipments.'
+            },
+            {
+                imgSrc:'../IMG/faqs-source.png',
+                btnTxt:'ABOUT OUR COLLABORATION',
+                insideTxt:'Our exclusive collaborations with the esteemed organic brand, Florihana, bring our reed diffusers to a new level. Infused with their premium organic essential oils, our products offer an unparalleled sensory journey.'
+            },
+            {
+                imgSrc:'../IMG/faqs-environment.png',
+                btnTxt:'ABOUT ENVIRONMENTAL CARE',
+                insideTxt:'Our diffusers are crafted using eco-friendly materials, and we promote sustainability by using natural ingredients and recyclable packaging, ensuring a green and delightful aromatic experience for all.'
+            }
        ],
     //    <div class="thesus">
     //     <div class="btn">ABOUT FRAGRANCE LASTING</div>
